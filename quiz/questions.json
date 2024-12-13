@@ -1,0 +1,27 @@
+[
+    {
+        "question": "Vad heter Sveriges kung?",
+        "options": ["Carl XVI Gustaf", "Knugen", "Zlatan Ibrahimović"],
+        "answer": "Carl XVI Gustaf"
+    },
+    {
+        "question": "Hur många dagar finns det på ett år?",
+        "options": ["1337", "365", "500,000"],
+        "answer": "365"
+    },
+    {
+        "question": "Vad är meningen med livet?",
+        "options": ["Lycka", "Kärlek", "42"],
+        "answer": "42"
+    },
+    {
+        "question": "Vad är 9+10",
+        "options": ["19", "21", "910"],
+        "answer": "19"
+    },
+    {
+        "question": "Kan man ha annanas på pizza?",
+        "options": ["Nej", "Nähej", "Nope"],
+        "answer": "Nej"
+    }
+]
