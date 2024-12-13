@@ -1,5 +1,3 @@
-//document.addEventListener("DOMContentLoaded", () =>{})
-
 const questionElement = document.getElementById("question");
 const answerButton = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-button");
@@ -9,7 +7,7 @@ let score = 0;
 let questions = []
 
 
-// hämta frågor från json
+// Hämta frågor från json
 fetch("questions.json")
     .then((response) => response.json())
     .then((data) => {
@@ -19,7 +17,7 @@ fetch("questions.json")
     .catch((error) => console.error("Error loading questions:"));
 
 
-// starta quiz
+// Starta quiz
 function startQuiz(){
     currentQuestionIndex = 0;
     score = 0;
@@ -27,12 +25,14 @@ function startQuiz(){
     showQuestion();
 }
 
+// Visa fråga
 function showQuestion(){
     resetState();
     const currentQuestion = questions[currentQuestionIndex];
     const questionNo = currentQuestionIndex + 1;
     questionElement.innerHTML = questionNo + ". " + currentQuestion.question; 
 
+// Lägg till svars knapp
     currentQuestion.options.forEach(option => {
         const button = document.createElement("button");
         button.innerHTML = option;
@@ -45,6 +45,7 @@ function showQuestion(){
     });
 }
 
+// Reset inför nästa fråga
 function resetState(){
     nextButton.style.display = "none";
     while(answerButton.firstChild){
@@ -53,7 +54,7 @@ function resetState(){
     questionElement.classList.remove("correct", "incorrect");
 }
 
-//25min
+// Hantera användar input
 function selectAnswer(e){
     const selectedBtn = e.target;
     const isCorrect = selectedBtn.dataset.correct === "true";
@@ -64,6 +65,7 @@ function selectAnswer(e){
         selectedBtn.classList.add("incorrect");
     }
 
+// Highlight korrekt svar
     Array.from(answerButton.children).forEach(button => {
         if(button.dataset.correct === "true"){
             button.classList.add("correct");
@@ -72,11 +74,12 @@ function selectAnswer(e){
     });
     nextButton.style.display = "block";
 }
-    
+
+// Visa spelarens resultat och lägg till 'spela igen' knapp
 function showScore(){
     resetState();
-    questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
-    nextButton.innerHTML = "Play Again";
+    questionElement.innerHTML = `Du fick ${score} av ${questions.length} poäng!`;
+    nextButton.innerHTML = "Spela igen";
     nextButton.style.display = "block";
 }
 
