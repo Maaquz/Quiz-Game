@@ -20,8 +20,8 @@
         "answer": "19"
     },
     {
-        "question": "Kan man ha annanas på pizza?",
-        "options": ["Nej", "Nähej", "Nope"],
-        "answer": "Nej"
+        "question": "Vad är en häst för något?",
+        "options": ["Ett djur", "Ett fordon", "En frukt"],
+        "answer": "En frukt"
     }
 ]
